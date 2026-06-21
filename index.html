@@ -194,7 +194,7 @@ footer a{color:var(--blue);text-decoration:none}
     <label>계좌 유형</label>
     <div class="account-tabs" id="accountTabs"></div>
     <label>연평균 수익률 가정 <button onclick="useHistoricalReturn()" style="font-size:.7rem;background:var(--blue);color:#fff;border:none;border-radius:4px;padding:2px 8px;cursor:pointer;margin-left:8px">과거 평균 적용</button></label>
-    <input type="range" id="returnRate" min="1" max="25" value="8" step="0.5" oninput="updateSim()">
+    <input type="range" id="returnRate" min="1" max="25" value="8" step="0.1" oninput="updateSim()">
     <div class="range-value" id="rateVal">8%</div>
     <div id="divInfo" style="margin-top:16px;background:var(--bg);border-radius:8px;padding:12px;font-size:.85rem;color:var(--muted)">
       <strong id="divPct">1.1%</strong> — 선택 ETF 평균 배당률 (자동 계산)<br>
@@ -380,20 +380,42 @@ const ETF_DATA = [
   {id:'SOXX',  name:'반도체',       desc:'아이셰어즈 반도체', yr:23.0, div:0.8, region:'US',   currency:'USD'},
 ];
 const ACCOUNT_TYPES = [
-  {id:'general',  title:'일반계좌',  desc:'세금 15.4%',     taxDiv:0.154, taxGain:0,    limit:Infinity, taxDeferred:false},
-  {id:'isa',      title:'ISA',       desc:'200만원 비과세',   taxDiv:0,     taxGain:0.154,limit:2000000,  taxDeferred:false},
-  {id:'irp',      title:'IRP',       desc:'과세이연·세액공제',taxDiv:0,     taxGain:0.154,limit:1800000,  taxDeferred:true},
-  {id:'pension',  title:'연금저축',  desc:'과세이연·세액공제',taxDiv:0,     taxGain:0.055,limit:1800000,  taxDeferred:true},
-  {id:'isa_kr',   title:'ISA(국내)', desc:'국내상장 400만원', taxDiv:0,     taxGain:0,    limit:4000000,  taxDeferred:false},
+  {id:'general',  title:'일반계좌',  desc:'세금 15.4%',     taxDiv:0.154, taxGain:0,    limit:Infinity, taxDeferred:false, krOnly:false},
+  {id:'isa',      title:'ISA',       desc:'200만원 비과세',   taxDiv:0,     taxGain:0.154,limit:2000000,  taxDeferred:false, krOnly:false},
+  {id:'irp',      title:'IRP',       desc:'과세이연·세액공제',taxDiv:0,     taxGain:0.154,limit:1800000,  taxDeferred:true,  krOnly:false},
+  {id:'pension',  title:'연금저축',  desc:'과세이연·세액공제',taxDiv:0,     taxGain:0.055,limit:1800000,  taxDeferred:true,  krOnly:false},
+  {id:'isa_kr',   title:'ISA(국내)', desc:'국내상장만 가능',   taxDiv:0,     taxGain:0,    limit:4000000,  taxDeferred:false, krOnly:true},
 ];
 let selectedEtfs = new Set(['SPY','QQQ']);
 let selectedAccount = 'general';
 let chart = null;
+function updateChips(){
+  const acc = ACCOUNT_TYPES.find(a=>a.id===selectedAccount);
+  document.querySelectorAll('.etf-chip').forEach(chip=>{
+    const eid = chip.dataset.etfid;
+    const e = ETF_DATA.find(x=>x.id===eid);
+    if(acc.krOnly && e.region!=='KR'){
+      chip.classList.add('disabled');
+      chip.style.opacity='0.35';
+      chip.style.pointerEvents='none';
+    }else{
+      chip.classList.remove('disabled');
+      chip.style.opacity='';
+      chip.style.pointerEvents='';
+    }
+    if(selectedEtfs.has(eid)){
+      chip.classList.add('selected');
+    }else{
+      chip.classList.remove('selected');
+    }
+  });
+}
 function buildUI(){
   const etfList = document.getElementById('etfList');
   ETF_DATA.forEach(e=>{
     const chip = document.createElement('div');
     chip.className = 'etf-chip' + (selectedEtfs.has(e.id)?' selected':'');
+    chip.dataset.etfid = e.id;
     chip.innerHTML = `<span class="check">✓</span><span class="name">${e.name}</span><span class="yield">연 ${e.yr}% · 배당 ${e.div}%</span>`;
     chip.onclick = ()=>{
       if(selectedEtfs.has(e.id)) selectedEtfs.delete(e.id); else selectedEtfs.add(e.id);
@@ -411,6 +433,13 @@ function buildUI(){
       document.querySelectorAll('.account-tab').forEach(t=>t.classList.remove('selected'));
       tab.classList.add('selected');
       selectedAccount = a.id;
+      if(a.krOnly){
+        selectedEtfs.forEach(id=>{
+          const e = ETF_DATA.find(x=>x.id===id);
+          if(e && e.region!=='KR') selectedEtfs.delete(id);
+        });
+      }
+      updateChips();
       updateSim();
     };
     tabs.appendChild(tab);
