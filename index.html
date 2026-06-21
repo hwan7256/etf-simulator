@@ -220,7 +220,6 @@ function updateSim(){
   document.getElementById('yearsVal').textContent = years+'년';
   document.getElementById('monthlyVal').textContent = formatKRW((+document.getElementById('monthly').value)*10000);
   document.getElementById('rateVal').textContent = (+document.getElementById('returnRate').value)+'%';
-  const acc = ACCOUNT_TYPES.find(a=>a.id===selectedAccount);
 
   // 선택된 ETF 계산 (먼저 해야 배당률을 알 수 있음)
   const etfs = [...selectedEtfs].map(id=>ETF_DATA.find(e=>e.id===id));
