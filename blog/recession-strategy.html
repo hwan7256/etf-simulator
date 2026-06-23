@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>경기침체기 ETF 투자 전략 — 하락장에서도 버티는 법</title>
+<meta name="description" content="경기침체가 와도 ETF 투자자들이 할 수 있는 것들. 하락장에서 적립식, 배당 ETF, 리밸런싱 전략을 실제 사례와 함께 분석합니다.">
+<meta property="og:title" content="경기침체 올 때 ETF로 대처하는 법">
+<meta property="og:description" content="2008년, 2020년, 2022년 하락장 데이터로 분석한 ETF 투자자의 생존 전략.">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://hwan7256.github.io/etf-simulator/blog/recession-strategy.html">
+<style>
+:root{--bg:#0f172a;--card:#1e293b;--border:#334155;--text:#e2e8f0;--muted:#94a3b8;--green:#22c55e;--blue:#3b82f6;--red:#ef4444;--yellow:#eab308;--accent:#06b6d4}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);line-height:1.9;font-size:1.05rem}
+.container{max-width:800px;margin:0 auto;padding:20px}
+header{text-align:center;padding:40px 0 20px}
+header .tag{display:inline-block;background:var(--accent);color:#000;padding:4px 12px;border-radius:20px;font-size:.75rem;font-weight:700;letter-spacing:1px;margin-bottom:12px}
+header h1{font-size:2rem;line-height:1.4;margin-bottom:12px}
+header .meta{color:var(--muted);font-size:.85rem}
+.breadcrumb{margin-bottom:30px;font-size:.85rem}
+.breadcrumb a{color:var(--blue);text-decoration:none}
+article h2{font-size:1.5rem;margin:40px 0 16px;padding-bottom:8px;border-bottom:2px solid var(--border)}
+article h3{font-size:1.2rem;margin:28px 0 12px;color:var(--accent)}
+article p{margin-bottom:16px}
+article ul,article ol{margin:12px 0 20px 24px}
+article li{margin-bottom:8px}
+article strong{color:var(--yellow)}
+.callout{background:var(--card);border-left:4px solid var(--accent);padding:16px 20px;border-radius:8px;margin:20px 0}
+.tip{background:var(--card);border-left:4px solid var(--green);padding:16px 20px;border-radius:8px;margin:20px 0}
+.warn{background:var(--card);border-left:4px solid var(--red);padding:16px 20px;border-radius:8px;margin:20px 0}
+table{width:100%;border-collapse:collapse;margin:20px 0;font-size:.9rem}
+th,td{padding:12px 14px;border-bottom:1px solid var(--border);text-align:center}
+th{color:var(--accent);font-weight:700}
+td:first-child,th:first-child{text-align:left}
+.best{color:var(--green);font-weight:700}
+.cta{text-align:center;background:linear-gradient(135deg,#1a2a4a,#0f3460);border-radius:12px;padding:30px;margin:40px 0;border:1px solid var(--blue)}
+.cta a{display:inline-block;background:var(--green);color:#fff;padding:10px 28px;border-radius:8px;text-decoration:none;font-weight:700}
+footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.8rem;border-top:1px solid var(--border);margin-top:40px}
+footer a{color:var(--blue);text-decoration:none}
+@media(max-width:768px){.container{padding:12px}header h1{font-size:1.3rem}header .meta{font-size:.75rem}article h2{font-size:1.2rem;margin:28px 0 12px}article h3{font-size:1rem}article p,article li{font-size:.9rem}table{font-size:.75rem}th,td{padding:8px 6px}.cta{padding:20px 12px}.cta a{font-size:.9rem;padding:8px 20px}footer{font-size:.7rem;padding:20px 0}}
+@media(max-width:400px){header h1{font-size:1.1rem}article p{font-size:.85rem}table{font-size:.7rem}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "경기침체기 ETF 투자 전략 — 하락장에서도 버티는 법",
+  "datePublished": "2026-06-22",
+  "dateModified": "2026-06-22",
+  "description": "하락장에서 ETF 투자자들이 할 수 있는 현실적인 전략. 역사적 데이터 기반 분석.",
+  "author": {
+    "@type": "Person",
+    "name": "김정환"
+  }
+}
+</script>
+</head>
+<body>
+<div class="container">
+
+<nav class="breadcrumb">
+  <a href="../">🏠 ETF 적립식 투자 시뮬레이터</a> &rsaquo; 블로그
+</nav>
+
+<header>
+  <div class="tag">투자 전략</div>
+  <h1>경기침체 올 때 ETF로 대처하는 법</h1>
+  <p class="meta">2026년 6월 22일 · 읽는 시간 약 6분</p>
+</header>
+
+<article>
+
+<div class="callout">
+<p><strong>한 줄 요약:</strong> 경기침체가 와도 ETF 투자자가 할 일은 하나다. <strong>계속 적립식을 유지하라.</strong> 하락장은 기회다. 공포에 팔지 말고, 싸게 사서 버텨라. 과거 세 번의 큰 하락장(2008, 2020, 2022)을 데이터로 증명한다.</p>
+</div>
+
+<h2>하락장에서 ETF 투자자가 저지르는 가장 큰 실수</h2>
+
+<p>2022년을 떠올려보자. QQQ가 -35% 빠졌다. 많은 사람들이 \"더 떨어지기 전에 빼자\"며 ETF를 팔았다. 나도 잠깐 고민했다. \"지금 빼서 다시 들어올까?\" 근데 그렇게 한 사람들은 대부분 2023년 반등을 타지 못했다. 타이밍을 맞춰 다시 들어오는 게 말처럼 쉽지 않기 때문이다.</p>
+
+<p>사실 하락장에서 파는 건 거의 항상 손해다. 아래 데이터를 보자.</p>
+
+<h2>역대 주요 하락장과 회복 기간</h2>
+
+<table>
+  <thead>
+    <tr><th>하락장</th><th>S&P500 최대 하락</th><th>회복까지 걸린 시간</th><th>회복 후 1년 수익률</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>2008 금융위기</td><td>-56.8%</td><td>49개월</td><td>+23.5%</td></tr>
+    <tr><td>2020 코로나</td><td>-33.9%</td><td>5개월</td><td>+43.5%</td></tr>
+    <tr><td>2022 금리인상</td><td>-25.4%</td><td>14개월</td><td>+26.2%</td></tr>
+  </tbody>
+</table>
+
+<p>2008년 금융위기는 진짜 무서웠다. 49개월을 기다려야 원금을 회복했다. 4년 넘게 마이너스였다. 근데 회복 후 1년 수익률이 +23.5%였다. 하락장에서 버틴 사람들은 그걸 경험했다.</p>
+
+<p>더 중요한 건 <strong>적립식으로 계속 매수한 사람</strong>의 결과다. 2008년에 매달 꾸준히 샀다면 평균매입단가가 훨씬 낮아져서 회복 속도가 훨씬 빨랐을 거다. 실제로 2008~2009년에 적립식으로 SPY를 매수한 사람은 2010년 말까지 원금 회복どころか 큰 수익을 냈다.</p>
+
+<h2>하락장에서 할 것과 하지 말 것</h2>
+
+<h3>✅ 할 것</h3>
+<ul>
+  <li><strong>적립식 유지:</strong> 자동이체 설정을 해두고 신경 끄는 게 최선이다. 하락장일수록 더 싸게 사는 거다.</li>
+  <li><strong>배당 재투자:</strong> SCHD 같은 배당 ETF는 하락장에도 배당금이 계속 들어온다. 그 배당금으로 더 싸게 주식을 산다.</li>
+  <li><strong>리밸런싱:</strong> QQQ가 많이 빠지면 SPY 비중을 줄여서 QQQ를 더 산다. 반대로 SPY가 덜 빠졌으면 그걸 판다. 자세한 건 <a href="https://hwan7256.github.io/etf-simulator/blog/office-worker-portfolio.html">포트폴리오 전략 글</a> 참고.</li>
+  <li><strong>현금 비축:</strong> 평소에 현금 비중 10~20%를 유지했다면, 하락장에서 그 현금으로 싸게 매수한다. 다만 타이밍을 맞추려는 건 금물.</li>
+</ul>
+
+<h3>❌ 하지 말 것</h3>
+<ul>
+  <li><strong>공포에 매도:</strong> 바닥에서 파는 게 가장 큰 손해다. 2008년 바닥에서 판 사람은 이후 10년간의 상승을 놓쳤다.</li>
+  <li><strong>적립식 중단:</strong> \"잠깐 멈췄다가 좀 안정되면 다시 할게\" — 이게 평균을 망가뜨린다. 기계처럼 하라.</li>
+  <li><strong>레버리지 ETF로 갈아타기:</strong> 큐잉(QQQ)보다 더 수익률 높은 3배 레버리지 TQQQ로 갈아타는 사람들이 있다. 하락장에서 TQQQ는 -70% 이상 빠질 수 있다. 극단적 위험이다.</li>
+  <li><strong>뉴스 보며 일희일비:</strong> \"연준이 금리를 올린다\", \"물가지수가 예상보다 높다\", \"경기침체 우려\"... 하루하루 반응하면 절대 장기 투자 못 한다.</li>
+</ul>
+
+<h2>현실적인 포트폴리오 전략</h2>
+
+<p>경기침체를 대비한 포트폴리오를 원한다면 아래 조합을 고려해볼 만하다:</p>
+
+<table>
+  <thead>
+    <tr><th>상황</th><th>ETF 비중</th><th>예상 하락 폭</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>공격적 (20대)</td><td>QQQ 70% + SPY 30%</td><td>최대 -35%</td></tr>
+    <tr><td>중립적 (30~40대)</td><td>SPY 60% + QQQ 20% + SCHD 20%</td><td>최대 -25%</td></tr>
+    <tr><td>방어적 (50대+)</td><td>SPY 40% + SCHD 40% + 채권 ETF 20%</td><td>최대 -15%</td></tr>
+  </tbody>
+</table>
+
+<p>여기서 중요한 건 자신의 <strong>수면 높이</strong>다. 하락장에서도 잠을 잘 잘 수 있는 포트폴리오를 구성해야 한다. -35% 하락에 잠을 못 이루겠다면 QQQ 비중을 줄여라. 그게 더 장기적으로 이익이다.</p>
+
+<div class="callout">
+<p><strong>내 경험:</strong> 2022년에 내 포트폴리오가 -25% 떨어졌다. 당시에는 정말 힘들었다. 군대 오기 전에 모은 돈이 반토막 나니까. 근데 지금 와서 보니 그때가 가장 많이 살 기회였다. 그 시절에 더 많이 샀어야 했는데, 공포 때문에 적립식만 겨우 유지했다는 게 아쉽다.</p>
+</div>
+
+<h2>결론</h2>
+
+<p>경기침체가 온다고 해도 크게 걱정할 필요는 없다. ETF 적립식 투자자는 그냥 계속 하면 된다. 역사가 증명한다. 시장은 항상 회복됐고, 회복 후에는 더 높이 올랐다.</p>
+
+<p>하락장이 두렵다면 시뮬레이터에서 자신의 포트폴리오가 -30%일 때 얼마나 손실인지 직접 확인해보자. 미리 경험해두면 실제 하락장이 와도 덜 무섭다.</p>
+
+</article>
+
+<div class="cta">
+  <p>지금 당신의 ETF 조합이 하락장에서 얼마나 버틸지 시뮬레이터에서 확인해보자.</p>
+  <a href="../#simulator">ETF 시뮬레이터 실행하기 →</a>
+</div>
+
+<footer>
+  © 2026 ETF 적립식 투자 시뮬레이터 · <a href="../">홈</a> · <a href="../privacy.html">개인정보처리방침</a>
+</footer>
+
+</div>
+</body>
+</html>

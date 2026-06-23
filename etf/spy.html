@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPY ETF 완벽 분석 — S&P500, 워런 버핏이 선택한 ETF</title>
+<meta name="description" content="SPY ETF의 모든 것. S&P500 추종, 운용보수 0.09%, 30년 역사. 초보자부터 전문가까지 가장 많이 선택하는 이유를 데이터로 설명합니다.">
+<meta property="og:title" content="SPY ETF — 미국 주식시장 그 자체">
+<meta property="og:description" content="SPY는 왜 전 세계에서 가장 많이 거래되는 ETF일까? 수익률, 배당, 보수까지 낱낱이 분석.">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://hwan7256.github.io/etf-simulator/etf/spy.html">
+<style>
+:root{--bg:#0f172a;--card:#1e293b;--border:#334155;--text:#e2e8f0;--muted:#94a3b8;--green:#22c55e;--blue:#3b82f6;--red:#ef4444;--yellow:#eab308;--accent:#06b6d4}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);line-height:1.9;font-size:1.05rem}
+.container{max-width:800px;margin:0 auto;padding:20px}
+header{text-align:center;padding:40px 0 20px}
+header .tag{display:inline-block;background:var(--accent);color:#000;padding:4px 12px;border-radius:20px;font-size:.75rem;font-weight:700;letter-spacing:1px;margin-bottom:12px}
+header h1{font-size:2rem;line-height:1.4;margin-bottom:12px}
+header .meta{color:var(--muted);font-size:.85rem}
+.breadcrumb{margin-bottom:30px;font-size:.85rem}
+.breadcrumb a{color:var(--blue);text-decoration:none}
+article h2{font-size:1.5rem;margin:40px 0 16px;padding-bottom:8px;border-bottom:2px solid var(--border)}
+article h3{font-size:1.2rem;margin:28px 0 12px;color:var(--accent)}
+article p{margin-bottom:16px}
+article ul,article ol{margin:12px 0 20px 24px}
+article li{margin-bottom:8px}
+article strong{color:var(--yellow)}
+.callout{background:var(--card);border-left:4px solid var(--accent);padding:16px 20px;border-radius:8px;margin:20px 0}
+.tip{background:var(--card);border-left:4px solid var(--green);padding:16px 20px;border-radius:8px;margin:20px 0}
+.warn{background:var(--card);border-left:4px solid var(--red);padding:16px 20px;border-radius:8px;margin:20px 0}
+table{width:100%;border-collapse:collapse;margin:20px 0;font-size:.9rem}
+th,td{padding:12px 14px;border-bottom:1px solid var(--border);text-align:center}
+th{color:var(--accent);font-weight:700}
+td:first-child,th:first-child{text-align:left}
+.best{color:var(--green);font-weight:700}
+.cta{text-align:center;background:linear-gradient(135deg,#1a2a4a,#0f3460);border-radius:12px;padding:30px;margin:40px 0;border:1px solid var(--blue)}
+.cta a{display:inline-block;background:var(--green);color:#fff;padding:10px 28px;border-radius:8px;text-decoration:none;font-weight:700}
+footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.8rem;border-top:1px solid var(--border);margin-top:40px}
+footer a{color:var(--blue);text-decoration:none}
+@media(max-width:768px){.container{padding:12px}header h1{font-size:1.3rem}header .meta{font-size:.75rem}article h2{font-size:1.2rem;margin:28px 0 12px}article h3{font-size:1rem}article p,article li{font-size:.9rem}table{font-size:.75rem}th,td{padding:8px 6px}.cta{padding:20px 12px}.cta a{font-size:.9rem;padding:8px 20px}footer{font-size:.7rem;padding:20px 0}}
+@media(max-width:400px){header h1{font-size:1.1rem}article p{font-size:.85rem}table{font-size:.7rem}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "SPY ETF 완벽 분석 — S&P500, 워런 버핏이 선택한 ETF",
+  "datePublished": "2026-06-22",
+  "dateModified": "2026-06-22",
+  "description": "SPY ETF의 모든 것. S&P500 추종, 운용보수 0.09%, 30년 역사. 초보자부터 전문가까지 가장 많이 선택하는 이유를 데이터로 설명합니다.",
+  "author": {
+    "@type": "Person",
+    "name": "김정환"
+  }
+}
+</script>
+</head>
+<body>
+<div class="container">
+
+<nav class="breadcrumb">
+  <a href="../">🏠 ETF 적립식 투자 시뮬레이터</a> &rsaquo; <a href="../">ETF</a>
+</nav>
+
+<header>
+  <div class="tag">ETF 개요</div>
+  <h1>SPY ETF — 미국 주식시장 그 자체</h1>
+  <p class="meta">2026년 6월 22일 · 읽는 시간 약 5분</p>
+</header>
+
+<article>
+
+<div class="callout">
+<p><strong>티커: SPY | 정식명칭: SPDR S&P 500 ETF Trust | 운용사: State Street</strong></p>
+<p>SPY는 내가 제일 처음 산 ETF다. 군대 오기 전에 알바 모은 돈으로 SPY 한 주 샀을 때의 그 설렘. 지금은 ISA 계좌에서 꾸준히 적립식으로 모으고 있다. 이 ETF에 대해 모르면 미국 주식투자를 논하기 어렵다. 그만큼 중요하고, 그만큼 검증된 상품이다.</p>
+</div>
+
+<h2>기본 정보</h2>
+
+<table>
+  <thead>
+    <tr><th>항목</th><th>내용</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>티커</td><td>SPY (SPDR S&P 500 ETF)</td></tr>
+    <tr><td>추종 지수</td><td>S&P 500 — 미국 대형주 500종목</td></tr>
+    <tr><td>운용보수</td><td>0.0945% (연)</td></tr>
+    <tr><td>배당률</td><td>연 1.5% (분기 배당)</td></tr>
+    <tr><td>설정일</td><td>1993년 1월 — 무려 33년 역사</td></tr>
+    <tr><td>순자산</td><td>약 6,000억 달러</td></tr>
+    <tr><td>1주 가격</td><td>약 $540 (2026.06 기준)</td></tr>
+    <tr><td>분배 주기</td><td>분기별 (1·4·7·10월)</td></tr>
+  </tbody>
+</table>
+
+<h2>SPY가 특별한 이유</h2>
+
+<p>SPY는 1993년에 세상에 나왔다. 내가 태어나기도 전이다. 그동안 닷컴 버블, 리먼 사태, 코로나 팬데믹, 2022년 금리 인상기를 모두 겪으면서도 건재하다. 그리고 앞으로도 그럴 가능성이 높다. 왜냐하면 SPY는 단순히 ETF 하나를 넘어서 <strong>미국 경제 전체에 투자하는 가장 간단한 방법</strong>이기 때문이다.</p>
+
+<p>S&P500 지수는 애플, 마이크로소프트, 엔비디아, 아마존, 메타, 버크셔 해서웨이 등 미국을 대표하는 500개 기업을 시가총액 비중대로 담고 있다. 기술주부터 헬스케어, 금융, 에너지까지. 한마디로 미국 경제의 축소판이다.</p>
+
+<div class="tip">
+<p><strong>워런 버핏의 유명한 말:</strong> "내가 죽으면 유산의 90%를 S&P500 ETF에 투자하고, 나머지 10%는 국채에 넣어두라고 유언장에 썼다." 헤지펀드 매니저들과의 10년 내기에서 S&P500이 이긴 것도 유명한 이야기.</p>
+</div>
+
+<h2>장기 수익률</h2>
+
+<table>
+  <thead>
+    <tr><th>기간</th><th>연평균 수익률</th><th>누적 수익률</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1년</td><td>24.3%</td><td>24.3%</td></tr>
+    <tr><td>3년</td><td>11.2%</td><td>37.4%</td></tr>
+    <tr><td>5년</td><td>14.5%</td><td>96.2%</td></tr>
+    <tr><td>10년</td><td class="best">12.3%</td><td class="best">219%</td></tr>
+    <tr><td>20년</td><td>9.8%</td><td>556%</td></tr>
+    <tr><td>30년 (1996~)</td><td>7.5%</td><td>850%+</td></tr>
+  </tbody>
+</table>
+
+<p>이 표에서 주목할 점은 <strong>시간이 길어질수록 수익률이 안정화된다</strong>는 거다. 1년 단위로 보면 마이너스인 해도 많지만 (2008년 -38%, 2022년 -19%), 10년 이상 가져가면 거의 항상 플러스다. 이게 바로 적립식 투자가 강력한 이유다. 단기 하락을 두려워하지 않고 꾸준히 모으면 결국 복리로 불어난다.</p>
+
+<h2>SPY 배당 내역</h2>
+
+<p>SPY는 분기별로 배당금을 지급한다. 1주당 배당금은 대략 $1.5~$2.0 정도고, 연간 배당률은 1.3~1.5% 수준이다. 배당에 목숁 거는 ETF는 아니지만, 그래도 매 분기 들어오는 배당금을 재투자하면 복리 효과가 상당하다.</p>
+
+<p>내 경험상 SPY 10주를 1년간 모으면 분기당 $15~20 정도 배당금이 들어온다. 큰돈은 아니지만, "내가 가진 자산이 돈을 벌어준다"는 느낌이 들어서 동기부여가 확실히 된다.</p>
+
+<h2>국내 대안: TIGER S&P500</h2>
+
+<p>해외 주식 계좌가 없거나 환전이 번거롭다면, 국내 상장된 TIGER S&P500 ETF도 좋은 선택이다. SPY와 동일한 S&P500 지수를 추종하면서도, 원화로 바로 매수할 수 있고 운용보수도 0.09%로 거의 비슷하다. 자세한 비교는 <a href="tiger-sp500.html">TIGER S&P500 페이지</a>를 참고하자.</p>
+
+<table>
+  <thead>
+    <tr><th>비교 항목</th><th>SPY</th><th>TIGER S&P500</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>거래 통화</td><td>USD</td><td>KRW</td></tr>
+    <tr><td>운용보수</td><td>0.0945%</td><td>0.09%</td></tr>
+    <tr><td>배당소득세</td><td>15.4% (원천징수)</td><td>15.4% (분리과세)</td></tr>
+    <tr><td>환전 필요</td><td>필요</td><td>불필요</td></tr>
+    <tr><td>연평균 수익률</td><td>12.3%</td><td>11.5% (환율 영향)</td></tr>
+  </tbody>
+</table>
+
+<h2>장점과 단점</h2>
+
+<h3>👍 장점</h3>
+<ul>
+  <li><strong>검증된 역사:</strong> 30년 넘게 운용되며 위기를 여러 번 겪음</li>
+  <li><strong>유동성 최강:</strong> 하루 거래량이 수백만 주. 사고팔 때 미끄러짐이 거의 없음</li>
+  <li><strong>낮은 보수:</strong> 0.09%면 연 1,000만원 투자 시 수수료가 9,000원 수준</li>
+  <li><strong>분산투자 자동 완성:</strong> ETF 하나로 500개 기업에 분산</li>
+  <li><strong>배당 재투자:</strong> 분기별 배당을 재투자하면 복리 효과</li>
+</ul>
+
+<h3>👎 단점</h3>
+<ul>
+  <li><strong>환전 필요:</strong> 미국 주식 계좌 필요, 환율 리스크 존재</li>
+  <li><strong>배당률 낮음:</strong> 배당만 보면 SCHD(3.8%)나 채권 ETF가 나음</li>
+  <li><strong>성장주 비중:</strong> 기술주 비중이 높아 변동성 완전히 피할 순 없음</li>
+  <li><strong>해외 ETF 양도세:</strong> 연 250만원 초과 수익 시 22% 세금</li>
+</ul>
+
+<h2>자주 묻는 질문</h2>
+
+<h3>SPY 1주에 얼마예요?</h3>
+<p>2026년 6월 기준 약 $540 정도다. 1주에 한화로 70만원 안쪽. 처음 시작할 때 1주 가격이 부담될 수 있는데, 요즘은 미래에셋이나 키움에서 소수점 매수가 가능해서 1만원 단위로도 살 수 있다.</p>
+
+<h3>SPY vs VOO, 뭐가 달라요?</h3>
+<p>둘 다 S&P500 추종 ETF지만, VOO(뱅가드)의 운용보수가 0.03%로 더 싸다. SPY는 유동성이 압도적이라 기관 투자자들이 선호하고, VOO는 개인 투자자에게 보수 면에서 유리하다. 개인적으로는 장기 적립식이면 VOO, 단타나 옵션 거래면 SPY가 낫다고 본다.</p>
+
+<h3>ISA 계좌로 SPY 살 수 있나요?</h3>
+<p>ISA(신탁형)에서는 가능하다. 다만 ISA(국내형)는 국내 상장 종목만 가능하니 TIGER S&P500을 대신 매수해야 한다. 계좌별 차이는 <a href="https://hwan7256.github.io/etf-simulator/blog/isa-vs-irp.html">ISA vs IRP 비교 글</a>에서 자세히 다뤘다.</p>
+
+<h3>시뮬레이터에서 SPY 수익률 확인</h3>
+<p>직접 숫자로 보고 싶다면 <a href="../#simulator">ETF 적립식 투자 시뮬레이터</a>에서 SPY를 선택하고 20년 후 예상 자산을 확인해보자.</p>
+
+</article>
+
+<div class="cta">
+  <p>SPY 하나만 꾸준히 적립식으로 모아도 장기적으로 꽤 괜찮은 수익을 기대할 수 있다. 시뮬레이터에서 직접 확인해보자.</p>
+  <a href="../#simulator">ETF 시뮬레이터 실행하기 →</a>
+</div>
+
+<footer>
+  © 2026 ETF 적립식 투자 시뮬레이터 · <a href="../">홈</a> · <a href="../privacy.html">개인정보처리방침</a>
+</footer>
+
+</div>
+</body>
+</html>
