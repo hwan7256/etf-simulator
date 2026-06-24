@@ -1,0 +1,28 @@
+# Environment & secrets
+.env
+.env.*
+*.env
+
+# API keys & tokens
+*_secret*.json
+token.json
+credentials.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs & data
+*.log
+*.bak
